@@ -1,0 +1,38 @@
+server:
+  port: 8083
+spring:
+  profiles:
+    active: dev
+    application:
+      name: edu_backend
+  datasource:
+    url: jdbc:mysql://lyp123.com:3306/edusystem
+    username: edusystem
+    password: sHmSnTHL5drzASMJ
+  resources:
+    static-locations: classpath:/webapp/
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+  output:
+    ansi:
+      enabled: always
+
+mybatis:
+  mapper-locations: classpath:mapperxml/*.xml
+  type-aliases-package: com.dxzmpk.edu_backend.entity
+
+pagehelper:
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+#logging:
+#  level:
+#    org.springframework.web: ERROR
+#    com.homex: TRACE
+#  file: ./logs/spring-boot.log
+#  pattern:
+#    console: "%clr(%d{yyyy-MM-dd HH:mm:ss}  %-5level %logger{36} - %msg%n){%5p}"
+#    file: "%clr(%d{yyyy-MM-dd HH:mm:ss}  %-5level %logger{36} - %msg%n){%5p}"
